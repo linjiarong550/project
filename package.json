@@ -1,0 +1,22 @@
+{
+  "name": "spirit-realm-pets",
+  "version": "1.0.0",
+  "description": "灵境宠界 - NFT宠物养成与元宇宙建造游戏",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run compile && concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm start",
+    "compile": "cd contracts && npx hardhat compile",
+    "test": "cd contracts && npx hardhat test",
+    "deploy:local": "cd contracts && npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:testnet": "cd contracts && npx hardhat run scripts/deploy.js --network sepolia",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install && cd ../contracts && npm install"
+  },
+  "keywords": ["blockchain", "nft", "game", "web3", "metaverse"],
+  "author": "Spirit Realm Pets Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
